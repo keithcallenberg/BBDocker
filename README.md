@@ -1,5 +1,5 @@
-# bbdocker
-Docker image for latest BioBuilds
+# BBDocker
+Docker image for latest BioBuilds release
 
 This Debian-based Docker image installs dependencies for conda, miniconda, and then installs the latest release of BioBuilds. See the [BioBuilds website](http://www.biobuilds.org/) for more details on the bioinformatics-related packages available.
 
