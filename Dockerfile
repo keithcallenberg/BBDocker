@@ -22,7 +22,14 @@ ENV PATH /opt/conda/bin:$PATH
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
 
+# install BioBuilds with conda
 RUN conda create -c biobuilds -p /biobuilds-2016.04 biobuilds=2016.04
+
+# set environment variables for biobuilds
+# we do this instead of "source activate /biobuilds-2016.04"
+ENV PATH /biobuilds-2016.04/bin:$PATH
+ENV CONDA_ENV_PATH /biobuilds-2016.04
+ENV CONDA_DEFAULT_ENV //biobuilds-2016.04
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 CMD [ "/bin/bash" ]
